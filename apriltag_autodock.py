@@ -1,10 +1,39 @@
-# This is a slightly modified version of mavlink_apriltags_landing_target example which comes with OpenMV IDE
-# Successful tests for AutoDocking have been conducted using this example
+# The MIT License (MIT)
+
+# Copyright (c) 2013-2021 Ibrahim Abdelkader <iabdalkader@openmv.io>
+# Copyright (c) 2013-2021 Kwabena W. Agyeman <kwagyeman@openmv.io>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE
 #
+#
+# =============================================================================================================
+# This is a slightly modified version of mavlink_apriltags_landing_target example which comes with OpenMV IDE
+# Successful tests for AutoDocking have been conducted using this script
 # This script sends out AprilTag detections using the MAVLink protocol to
 # an ArduPilot/PixHawk controller for precision landing using your OpenMV Cam.
 #
 # P4 = TXD
+#
+# Make sure you have put the marker id and size in valid_tag_ids
+# GREEN led blinks on the camera when the camera is able to detect any markers listed in valid_tag_ids
+# RED led blinks when the camera could not detect any markers
+# =============================================================================================================
 
 import image, math, pyb, sensor, struct, time
 from pyb import LED
